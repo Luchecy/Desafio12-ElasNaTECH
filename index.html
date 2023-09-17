@@ -3,58 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora - Desafio 12 ♥</title>
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="Css/style.css">
     <link rel="apple-touch-icon" sizes="192x192" href="Imagens/i192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Imagens/i32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Imagens/i16.png">
+
+    <title>Luchecy Ribeiro - Desafio 12 ♥</title>
 </head>
 <body>
-    <div class="container">
-        <div class="calculadora escura">
-            <div class="alternar-tema ativo">
-                <i class="alterar-icone"></i>
-            </div>
-            <div class="display-tela">
-                <div id="display"></div>
-            </div>
-            <div class="botaos">
-                <table>
-                    <tr>
-                        <td><button class="btn-operador" id="limpar">C</button></td>
-                        <td><button class="btn-operador" id="/">÷</button></td>
-                        <td><button class="btn-operador" id="*">×</button></td>
-                        <td><button class="btn-operador" id="voltar">←</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="btn-numero" id="7">7</button></td>
-                        <td><button class="btn-numero" id="8">8</button></td>
-                        <td><button class="btn-numero" id="9">9</button></td>
-                        <td><button class="btn-operador" id="-">-</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="btn-numero" id="4">4</button></td>
-                        <td><button class="btn-numero" id="5">5</button></td>
-                        <td><button class="btn-numero" id="6">6</button></td>
-                        <td><button class="btn-operador" id="+">+</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="btn-numero" id="1">1</button></td>
-                        <td><button class="btn-numero" id="2">2</button></td>
-                        <td><button class="btn-numero" id="3">3</button></td>
-                        <td rowspan="2"><button class="btn-igual" id="igual">=</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="btn-operador" id="(">(</button></td>
-                        <td><button class="btn-numero" id="0">0</button></td>
-                        <td><button class="btn-operador" id=")">)</button></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+    <header class="cabecalho">
+        <div class="cabecalho-logo">Calculadora</div>
+        <nav class="cabecalho-nav">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/luchecyribeiro/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/Luchecy" target="_blank">GitHub</a></li>
+                <li><a href="https://jabrasil.org.br/elasnatech23/" target="_blank">ElasNaTECH</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Dom - Document Object Model</h1>
+        <div id="div01" class="content">
+        <input type="number" name="txt01" id="txt01" class="txt">
+        <input type="number" name="txt02" id="txt02" class="txt">
+        <input type="button" value="+" id="btnSomar" class="txt">
+        <input type="button" value="-" id="btnSubtrair" class="txt">
+        <input type="button" value="*" id="btnMultiplicar" class="txt">
+        <input type="button" value="/" id="btnDividir" class="txt">
+        <input type="button" value="Limpar" id="btnLimpar" class="txt">
+        <div id="resultado">Resultado</div>
     </div>
+    
+    </main>
+    
 
-    <script src="JS/JavaScript.js"></script>
+    <footer>Luchecy Ribeiro - Desafio 12 ♥</footer>
+
+    <script>
+
+var btnSomar = document.getElementById('btnSomar');
+    btnSomar.addEventListener('click', somar);
+
+    var btnSubtrair = document.getElementById('btnSubtrair');
+    btnSubtrair.addEventListener('click', subtrair);
+
+    var btnMultiplicar = document.getElementById('btnMultiplicar');
+    btnMultiplicar.addEventListener('click', multiplicar);
+
+    var btnDividir = document.getElementById('btnDividir');
+    btnDividir.addEventListener('click', dividir);
+
+        function somar() {
+            var c1 = document.getElementById('txt01');
+            var c2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 + num2;
+            result.innerText = "A soma é: " + resultado;
+
+        }
+
+        function subtrair() {
+            var c1 = document.getElementById('txt01');
+            var c2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 - num2;
+            result.innerText = "A subtração é: " + resultado;
+
+        }
+
+        function multiplicar() {
+            var c1 = document.getElementById('txt01');
+            var c2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 * num2;
+            result.innerText = "A multiplicação é: " + resultado;
+
+        }
+
+        function dividir() {
+            var c1 = document.getElementById('txt01');
+            var c2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 / num2;
+            result.innerText = "A divisão é: " + resultado;
+
+        }
+
+        function limpar() {
+            var c1 = document.getElementById('txt01');
+            var c2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+
+            c1.value = '';
+            c2.value = '';
+            result.innerText = 'Resultado';
+        }
+    </script>
 </body>
 </html>
